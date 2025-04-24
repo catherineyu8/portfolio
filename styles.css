@@ -1,23 +1,33 @@
 body {
 	font-family: "Trebuchet MS", sans-serif;
-	color: #553922; /* text color */
-	background-color: #f1ece2;
+	color: #164c89; /* text color */
 	padding: 20px 200px;
 }
 
+/* navbar */
+nav {
+	background-color: #c5d2e5;
+	display: flex;
+	justify-content: space-between;
+}
+.right-nav-tabs {
+}
+
+/* links */
+a {
+	/* color: #007bff; */
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+a:hover {
+	/* color: #0056b3; */
+	text-decoration: underline;
+}
+
+/* below: old styles */
+
 img {
 	max-width: 100%;
-}
-
-.story-text {
-	color: #875c35;
-	font-style: italic;
-}
-
-.accent-text {
-	color: #2e2ca9;
-	font-weight: bold;
-	display: inline; /* Keeps it on the same line as the accordion triangle */
 }
 
 /* TODO: diff font sizes for headers */
