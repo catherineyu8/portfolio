@@ -1,0 +1,52 @@
+body {
+	font-family: "Trebuchet MS", sans-serif;
+	color: #553922; /* text color */
+	background-color: #f1ece2;
+	padding: 20px 200px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.story-text {
+	color: #875c35;
+	font-style: italic;
+}
+
+.accent-text {
+	color: #2e2ca9;
+	font-weight: bold;
+	display: inline; /* Keeps it on the same line as the accordion triangle */
+}
+
+/* TODO: diff font sizes for headers */
+
+/* use flex boxes to arrange things in columns */
+.container {
+	display: flex;
+	gap: 20px; /* Space between columns */
+	justify-content: space-around;
+}
+
+.column {
+	flex: 1; /* Makes each column take equal space */
+	padding: 10px;
+	/* border: 1px solid black; */
+	/* align-items: center; Centers items horizontally */
+}
+
+/* table styling */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+th {
+	text-align: center;
+	color: #2e2ca9;
+}
+td {
+	border: 1px solid;
+	/* padding: 10px; */
+}
