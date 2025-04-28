@@ -10,54 +10,26 @@
 
 	<!-- page content goes into <body> -->
 	<body>
+		<!-- navbar -->
 		<nav>
-			<a
-				href="#"
-				data-page="home"
-				onclick="loadPage('home', this); return false;"
-				>Catherine Yu</a
-			>
+			<a href="index.html">Catherine Yu</a>
 			<div class="right-nav-tabs">
-				<a
-					href="#"
-					data-page="projects"
-					onclick="loadPage('projects', this); return false;"
-					>projects</a
-				>
-				<a
-					href="#"
-					data-page="about"
-					onclick="loadPage('about', this); return false;"
-					>About</a
-				>
-
-				<a
-					href="#"
-					data-page="contact"
-					onclick="loadPage('contact', this); return false;"
-					>contact</a
-				>
-				<a
-					href="#"
-					data-page="resume"
-					onclick="loadPage('resume', this); return false;"
-					>Resume</a
-				>
+				<a href="projects.html">projects</a>
+				<a href="about.html">about</a>
+				<a href="contact.html">contact</a>
+				<a href="assets/Catherine_Yu_Resume_24.pdf">resume</a>
 			</div>
 		</nav>
 
-		<div id="main-content"></div>
-		<script>
-			function loadPage(page) {
-				fetch(`pages/${page}.html`)
-					.then((response) => response.text())
-					.then((data) => {
-						document.getElementById("main-content").innerHTML =
-							data;
-					});
-			}
-
-			window.onload = () => loadPage("home"); // load home by default
-		</script>
+		<!-- main page content -->
+		<main>
+			<h1>Hi, I'm Catherine!</h1>
+			<p>
+				I'm a full-stack developer passionate about building impactful,
+				scalable projects, and creating an inclusive environment where
+				everyone feels welcome to explore and grow.
+			</p>
+			<img src="assets/mountain_bg.png" />
+		</main>
 	</body>
 </html>
