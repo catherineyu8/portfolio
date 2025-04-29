@@ -7,6 +7,12 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 }
+p {
+	color: black;
+}
+.blue {
+	color: #164c89;
+}
 
 /* navbar styles */
 nav {
@@ -86,4 +92,48 @@ img {
 	overflow-x: auto; /* <<< scroll horizontally if too wide */
 	padding: 10px;
 	scroll-snap-type: x mandatory; /* optional, for smooth snapping */
+}
+
+/* other links (email, github, etc) */
+.links a,
+.links a:visited {
+	text-decoration: underline;
+	color: #164c89;
+}
+
+.links a:hover {
+	color: black;
+}
+
+/* project card styles */
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-gap: 50px;
+}
+.project-card {
+	/* Add shadows to create the "card" effect */
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 2px 4px 0 #164c89;
+	transition: 0.3s;
+	border-radius: 20px;
+	background-color: #dfeafa;
+	border: 2px solid #164c89;
+	padding: 30px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.project-card:hover {
+	box-shadow: 0 8px 16px 0 #164c89;
+}
+
+.cards a {
+	text-decoration: none;
+	color: inherit;
+}
+
+hr {
+	width: 100%;
+	border: 1px solid #164c89;
 }
