@@ -15,12 +15,15 @@ p {
 }
 
 /* navbar styles */
+#navbar {
+	position: sticky;
+	top: 0;
+}
 nav {
 	background-color: #164c89;
 	display: flex;
 	justify-content: space-between;
 	padding: 20px 30px;
-	position: sticky;
 }
 .right-nav-tabs {
 	display: flex;
@@ -106,6 +109,33 @@ img {
 	color: black;
 }
 
+/* individual links */
+.link,
+.link:visited {
+	text-decoration: underline;
+	color: #164c89;
+}
+
+.link:hover {
+	color: black;
+}
+
+/* back to projects carrot sizing */
+#back-to-projects {
+	/* font-size: 1em; same as p size */
+}
+#back-to-projects:hover {
+	cursor: pointer;
+	color: black;
+}
+.carrot {
+	font-size: 2.5em;
+	/* make it aligned with the text */
+	vertical-align: middle;
+	position: relative;
+	bottom: 0.1em;
+}
+
 /* project card styles */
 .cards {
 	display: grid;
@@ -122,6 +152,7 @@ img {
 	background-color: #dfeafa;
 	border: 2px solid #164c89;
 	padding: 30px;
+	height: min-content;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -137,4 +168,17 @@ img {
 hr {
 	width: 100%;
 	border: 1px solid #164c89;
+}
+
+/* project overview card */
+.overview-card {
+	/* Add shadows to create the "card" effect */
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 2px 4px 0 #164c89;
+	transition: 0.3s;
+	border-radius: 20px;
+	background-color: #dfeafa;
+	border: 2px solid #164c89;
+	padding: 30px;
 }
