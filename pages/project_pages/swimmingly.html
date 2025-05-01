@@ -4,8 +4,8 @@
 	<h1>This is Going Swimmingly!</h1>
 	<hr />
 	<p>
-		Reimplementing a multimodal sarcasm detection model using relational
-		context learning and a multiplex fusion network
+		Reimplementing a <b class="blue">multimodal sarcasm detection</b> model
+		using relational context learning and a multiplex fusion network
 	</p>
 	<p><i>Note: This project was completed in a team of 4.</i></p>
 	<p>
@@ -74,30 +74,30 @@
 	</p>
 	<ul>
 		<li>
-			Pass images/text through pretrained models BERT, ResNet, and CLIP to
-			extract initial features
+			Pass images/text through <b class="blue">pretrained models</b> BERT,
+			ResNet, and CLIP to extract initial features
 		</li>
 		<li>
-			Perform cross-attention between image and text features to learn
-			shallow relationships between them
+			Perform <b class="blue">cross-attention</b> between image and text
+			features to learn shallow relationships between them
 		</li>
 		<li>
-			Apply self, cross, and co-attention on attention features from
-			previous step concatenated with original features, and take a
-			weighted sum of the outputs for images and text, to learn relational
-			context between the two
+			Apply <b class="blue">self, cross, and co-attention</b> on attention
+			features from previous step concatenated with original features, and
+			take a weighted sum of the outputs for images and text, to learn
+			relational context between the two
 		</li>
 		<li>
-			Apply co-attention to original image/text features add take a
-			weighted sum to fuse the features together
+			Apply <b class="blue">co-attention</b> to original image/text
+			features add take a weighted sum to fuse the features together
 		</li>
 		<li>
-			Pass the relational features and fused features through a MLP to
-			further combine the features
+			Pass the relational features and fused features through a
+			<b class="blue">MLP</b> to further combine the features
 		</li>
 		<li>
-			Pass the final features through a simple linear layer to get
-			classification logits
+			Pass the final features through a
+			<b class="blue">simple linear layer</b> to get classification logits
 		</li>
 	</ul>
 	<p>
@@ -130,9 +130,9 @@
 	</figure>
 
 	<p>
-		We were able to achieve 79.99% accuracy on the best iteration of our
-		model, which is comparable with baseline models from the paper, but fell
-		short of the paper's achieved accuracy of 91%.
+		We were able to achieve <b class="blue">79.99%</b> accuracy on the best
+		iteration of our model, which is comparable with baseline models from
+		the paper, but fell short of the paper's achieved accuracy of 91%.
 	</p>
 	<p>
 		Our model tended to overpredict inputs as sarcastic even when they were
