@@ -7,7 +7,9 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 }
-p {
+p,
+li,
+ul {
 	color: black;
 }
 .blue {
@@ -60,12 +62,24 @@ main {
 	gap: 50px;
 }
 
+/* center things horizontally */
+.center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 /* don't let images be huge */
 img {
 	max-width: 100%;
 }
 
 /* display images in a circle */
+.pfp {
+	width: 280px;
+	height: 280px;
+	border-radius: 50%;
+}
 .img_circle {
 	width: 200px;
 	height: 200px;
@@ -181,4 +195,10 @@ hr {
 	background-color: #dfeafa;
 	border: 2px solid #164c89;
 	padding: 30px;
+}
+
+/* change aspect ratio of iframe within */
+.swimmingly-poster-wrapper {
+	width: 100%;
+	aspect-ratio: 1 / 0.82; /* height = 82% of width */
 }

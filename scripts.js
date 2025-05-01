@@ -51,3 +51,9 @@ function attachBackButtonListener() {
 		});
 	}
 }
+
+// resize iframe heights to stretch to frame contents
+function resizeIframe(iframe) {
+	iframe.style.height =
+		iframe.contentWindow.document.body.scrollHeight + "px";
+}
