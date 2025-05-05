@@ -1,0 +1,166 @@
+<div>
+	<!-- back button -->
+	<a id="back-to-projects"><span class="carrot">&lsaquo;</span> Projects</a>
+	<h1>This is Going Swimmingly!</h1>
+	<hr />
+	<p>
+		Reimplementing a <b class="blue">multimodal sarcasm detection</b> model
+		using relational context learning and a multiplex fusion network
+	</p>
+	<p><i>Note: This project was completed in a team of 4.</i></p>
+	<p>
+		<a
+			href="https://github.com/catherineyu8/this-is-going-swimmingly.git"
+			target="_blank"
+			class="link"
+			>GitHub repo</a
+		>
+	</p>
+
+	<div class="row">
+		<img src="/assets/swimmingly/racklemuffin.png" width="40%" />
+		<div class="overview-card">
+			<p>
+				<b class="blue">Goal:</b> Replicate method and results from a
+				<a href="https://arxiv.org/abs/2412.13008" class="link"
+					>scientific paper</a
+				>
+				performing multimodal sarcasm detection using relational context
+				learning and a multiplex fusion network
+			</p>
+			<p>
+				<b class="blue">Actions:</b> Convert model from PyTorch to
+				TensorFlow, preprocess public datasets to be compatible with the
+				model
+			</p>
+			<p>
+				<b class="blue">Impact:</b> Achieved 79.99% accuracy on a
+				sarcasm detection model that can be used to help filter
+				misinformation online
+			</p>
+			<p>
+				<i><b class="blue">Skills:</b> TensorFlow, Python, GitHub</i>
+			</p>
+		</div>
+	</div>
+	<br />
+
+	<h2>Background</h2>
+	<p>
+		The task of sarcasm classification is important because it can help
+		filter misinformation online, and can also assist with other machine
+		learning tasks such as sentiment analysis. My team reimplemented a
+		<a href="https://arxiv.org/abs/2412.13008" class="link"
+			>scientific paper</a
+		>
+		that focused on implementing sarcasm detection <i>without</i> the use of
+		graph structures - which are extremely computationally expensive to
+		create. The model in the paper instead aims to understand dynamic
+		relationships between image and text to learn the context of sarcasm.
+	</p>
+
+	<figure>
+		<div class="center">
+			<img src="/assets/swimmingly/sample.png" width="400px" />
+		</div>
+		<div class="center">
+			<figcaption>Sample sarcastic image/text input pair</figcaption>
+		</div>
+	</figure>
+	<h2>My Contributions</h2>
+	<p>
+		Converted model from PyTorch to Tensorflow, including the following
+		components:
+	</p>
+	<ul>
+		<li>
+			Pass images/text through <b class="blue">pretrained models</b> BERT,
+			ResNet, and CLIP to extract initial features
+		</li>
+		<li>
+			Perform <b class="blue">cross-attention</b> between image and text
+			features to learn shallow relationships between them
+		</li>
+		<li>
+			Apply <b class="blue">self, cross, and co-attention</b> on attention
+			features from previous step concatenated with original features, and
+			take a weighted sum of the outputs for images and text, to learn
+			relational context between the two
+		</li>
+		<li>
+			Apply <b class="blue">co-attention</b> to original image/text
+			features add take a weighted sum to fuse the features together
+		</li>
+		<li>
+			Pass the relational features and fused features through a
+			<b class="blue">MLP</b> to further combine the features
+		</li>
+		<li>
+			Pass the final features through a
+			<b class="blue">simple linear layer</b> to get classification logits
+		</li>
+	</ul>
+	<p>
+		Created a custom dataset for sarcasm detection with approx. a 50/50
+		distribution by combining the MORE (sarcastic) and Flickr 8k
+		(non-sarcastic) datasets
+	</p>
+	<p>
+		Processed MORE, Flickr 8k, and our own photos/captions to be compatible
+		with our model
+	</p>
+	<p>
+		Trained and tested different iterations of our model using compute on
+		Brown University's supercomputer
+	</p>
+	<ul></ul>
+
+	<h2>Conclusion</h2>
+
+	<figure>
+		<div class="center">
+			<img src="/assets/swimmingly/our_results.png" width="300px" />
+		</div>
+		<div class="center">
+			<figcaption>
+				Custom image/text input to the model, and whether the model
+				classified correctly or not
+			</figcaption>
+		</div>
+	</figure>
+
+	<p>
+		We were able to achieve <b class="blue">79.99%</b> accuracy on the best
+		iteration of our model, which is comparable with baseline models from
+		the paper, but fell short of the paper's achieved accuracy of 91%.
+	</p>
+	<p>
+		Our model tended to overpredict inputs as sarcastic even when they were
+		not.
+	</p>
+	<h2>Lessons Learned</h2>
+	<p>
+		<b class="blue">Shuffling training data is important.</b> Our model only
+		achieved 44% accuracy (worse than random!) without shuffling; because
+		the first batches of testing data were all sarcastic, the model learned
+		to only predict inputs as sarcastic. With shuffling added, the model's
+		accuracy improved to 72%.
+	</p>
+	<p>
+		<b class="blue">Available resources can be limiting.</b> While the
+		original paper froze pretrained feature extractors BERT and ResNet, it
+		unfroze and trained the CLIP feature extractor. We were unable to obtain
+		enough GPUs through Brown's supercomputer to unfreeze the CLIP
+		parameters without running out of memory. This may have the culprit of
+		our lower accuracy, as the CLIP-based features were all weighted
+		relatively heavily compared to other features in the model.
+	</p>
+	<p>View our final project poster here:</p>
+	<div class="swimmingly-poster-wrapper">
+		<iframe
+			src="/assets/swimmingly/poster.pdf"
+			width="100%"
+			height="100%"
+		></iframe>
+	</div>
+</div>

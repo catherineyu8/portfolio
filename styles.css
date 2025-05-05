@@ -7,7 +7,9 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 }
-p {
+p,
+li,
+ul {
 	color: black;
 }
 .blue {
@@ -15,6 +17,10 @@ p {
 }
 
 /* navbar styles */
+#navbar {
+	position: sticky;
+	top: 0;
+}
 nav {
 	background-color: #164c89;
 	display: flex;
@@ -55,6 +61,27 @@ main {
 	align-items: center; /* vertically center items */
 	gap: 50px;
 }
+.col {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* horizontally distribute items evenly */
+	align-items: center; /* vertically center items */
+}
+/* put icon links in a row */
+.icon-links {
+	display: flex;
+	justify-content: center;
+	/* justify-content: space-between; horizontally distribute items evenly */
+	gap: 50px;
+	padding: 20px;
+}
+
+/* center things horizontally */
+.center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
 
 /* don't let images be huge */
 img {
@@ -62,6 +89,11 @@ img {
 }
 
 /* display images in a circle */
+.pfp {
+	width: 280px;
+	height: 280px;
+	border-radius: 50%;
+}
 .img_circle {
 	width: 200px;
 	height: 200px;
@@ -105,6 +137,33 @@ img {
 	color: black;
 }
 
+/* individual links */
+.link,
+.link:visited {
+	text-decoration: underline;
+	color: #164c89;
+}
+
+.link:hover {
+	color: black;
+}
+
+/* back to projects carrot sizing */
+#back-to-projects {
+	/* font-size: 1em; same as p size */
+}
+#back-to-projects:hover {
+	cursor: pointer;
+	color: black;
+}
+.carrot {
+	font-size: 2.5em;
+	/* make it aligned with the text */
+	vertical-align: middle;
+	position: relative;
+	bottom: 0.1em;
+}
+
 /* project card styles */
 .cards {
 	display: grid;
@@ -121,6 +180,7 @@ img {
 	background-color: #dfeafa;
 	border: 2px solid #164c89;
 	padding: 30px;
+	height: min-content;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -136,4 +196,37 @@ img {
 hr {
 	width: 100%;
 	border: 1px solid #164c89;
+}
+
+/* project overview card */
+.overview-card {
+	/* Add shadows to create the "card" effect */
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 2px 4px 0 #164c89;
+	transition: 0.3s;
+	border-radius: 20px;
+	background-color: #dfeafa;
+	border: 2px solid #164c89;
+	padding: 30px;
+}
+
+/* change aspect ratio of iframe within */
+.swimmingly-poster-wrapper {
+	width: 100%;
+	aspect-ratio: 1 / 0.82; /* height = 82% of width */
+}
+
+/* overlay text over home image */
+.mountain-container {
+	position: relative;
+	text-align: center;
+	color: blue;
+}
+.overlay-text {
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
 }
