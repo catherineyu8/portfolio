@@ -21,14 +21,15 @@ function loadPage(page) {
 
 // attach click listeners to navbar links
 function addNavbarListeners() {
-	document.querySelectorAll("#navbar a").forEach((link) => {
+	document.querySelectorAll("a[data-page]").forEach((link) => {
 		link.addEventListener("click", (event) => {
 			// if the link has data-passthrough, don't load a new page (for resume - open in new tab)
 			if (event.target.hasAttribute("data-passthrough")) return;
 
 			event.preventDefault(); // stop from navigating to href
-			const page = event.target.getAttribute("data-page");
-			loadPage(page);
+			const link = event.target.closest("a[data-page]");
+			const page = link?.getAttribute("data-page");
+			if (page) loadPage(page);
 		});
 	});
 	// attach handlers to project cards (when page loads or changes)

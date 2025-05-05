@@ -61,6 +61,20 @@ main {
 	align-items: center; /* vertically center items */
 	gap: 50px;
 }
+.col {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* horizontally distribute items evenly */
+	align-items: center; /* vertically center items */
+}
+/* put icon links in a row */
+.icon-links {
+	display: flex;
+	justify-content: center;
+	/* justify-content: space-between; horizontally distribute items evenly */
+	gap: 50px;
+	padding: 20px;
+}
 
 /* center things horizontally */
 .center {
@@ -201,4 +215,18 @@ hr {
 .swimmingly-poster-wrapper {
 	width: 100%;
 	aspect-ratio: 1 / 0.82; /* height = 82% of width */
+}
+
+/* overlay text over home image */
+.mountain-container {
+	position: relative;
+	text-align: center;
+	color: blue;
+}
+.overlay-text {
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
 }
